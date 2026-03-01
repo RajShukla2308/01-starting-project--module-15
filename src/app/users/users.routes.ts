@@ -5,6 +5,7 @@ import { NewTaskComponent, canLeaveEditPage } from '../tasks/new-task/new-task.c
 import { inject } from '@angular/core';
 import { Task } from '../tasks/task/task.model';
 import { TasksService } from '../tasks/tasks.service';
+import { TasksComponent } from '../tasks/tasks.component';
 
 
 
@@ -37,8 +38,8 @@ export const routes: Routes = [
   },
   {
     path: 'tasks', // <your-domain>/users/<uid>/tasks
-    // component: TasksComponent,
-    loadComponent: () => import('../tasks/tasks.component').then((module)=> module.TasksComponent),
+    component: TasksComponent,
+    // loadComponent: () => import('../tasks/tasks.component').then((module)=> module.TasksComponent),
     runGuardsAndResolvers: 'always',
     resolve: {
       userTasks: resolveUserTasks,
