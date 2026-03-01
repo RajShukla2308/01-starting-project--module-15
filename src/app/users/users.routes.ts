@@ -39,6 +39,7 @@ export const routes: Routes = [
   {
     path: 'tasks', // <your-domain>/users/<uid>/tasks
     component: TasksComponent,
+    providers: [TasksService],
     // loadComponent: () => import('../tasks/tasks.component').then((module)=> module.TasksComponent),
     runGuardsAndResolvers: 'always',
     resolve: {
